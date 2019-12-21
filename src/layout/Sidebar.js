@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {NavigationActions} from 'react-navigation';
-import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, View, TouchableOpacity} from 'react-native';
+import {Icon} from 'native-base';
+import MyText from '../ui/MyText';
 
 class Sidebar extends Component {
   navigateToScreen = route => () => {
@@ -17,19 +19,22 @@ class Sidebar extends Component {
         <TouchableOpacity
           style={styles.drawerItem}
           onPress={this.navigateToScreen('Dashboard')}>
-          <Text>Dashboard</Text>
+          <Icon type="Feather" name="home" style={styles.drawerIcon} />
+          <MyText>Dashboard</MyText>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={styles.drawerItem}
           onPress={this.navigateToScreen('Analytics')}>
-          <Text>Analytics</Text>
+          <Icon type="Entypo" name="line-graph" style={styles.drawerIcon} />
+          <MyText>Analytics</MyText>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={styles.drawerItem}
           onPress={this.navigateToScreen('Settings')}>
-          <Text>Settings</Text>
+          <Icon type="Feather" name="settings" style={styles.drawerIcon} />
+          <MyText>Settings</MyText>
         </TouchableOpacity>
       </View>
     );
@@ -38,7 +43,7 @@ class Sidebar extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 40,
+    paddingTop: 50,
   },
   drawerItem: {
     paddingLeft: 25,
