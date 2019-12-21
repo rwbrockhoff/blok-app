@@ -43,7 +43,7 @@ class Sidebar extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 50,
+    paddingTop: 25,
   },
   drawerItem: {
     paddingLeft: 25,
