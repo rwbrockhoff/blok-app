@@ -1,27 +1,18 @@
 import React from 'react';
+import {StyleSheet} from 'react-native';
 import {Header, Left, Button, Icon, Body, Right, Title} from 'native-base';
-// import Icon from 'react-native-vector-icons/Ionicons';
-
-const flexStyle = {flex: 1};
-const titleStyle = {
-  alignSelf: 'center',
-};
-const iconStyle = {
-  color: '#fff',
-  fontSize: 30,
-};
 
 export default props => {
   return (
     <Header transparent={props.transparent ? true : false}>
-      <Left style={flexStyle}>
+      <Left style={styles.flex}>
         <Button onPress={props.navigation.openDrawer} transparent>
-          <Icon name="menu" style={iconStyle} />
+          <Icon name="menu" style={styles.icon} />
         </Button>
       </Left>
       {props.title ? (
-        <Body style={flexStyle}>
-          <Title style={titleStyle}>{props.title}</Title>
+        <Body style={styles.flex}>
+          <Title style={styles.title}>{props.title}</Title>
         </Body>
       ) : (
         <Body />
@@ -30,3 +21,9 @@ export default props => {
     </Header>
   );
 };
+
+const styles = StyleSheet.create({
+  flex: {flex: 1},
+  title: {alignSelf: 'center', fontFamily: 'Europa-Bold', fontSize: 24},
+  icon: {color: '#fff', fontSize: 30},
+});
